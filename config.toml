@@ -1,5 +1,6 @@
-[menu]
+[[menu]]
 
+# Header Menu
 [[menu.main]]
 name = "Homeoo"
 
