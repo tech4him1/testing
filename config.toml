@@ -1,35 +1,5 @@
-# Header Menu
-[[menu.main]]
-    name = "Home"
-    weight = 1
-    url = "/"
-    
-[[menu.main]]
-    name = "Join the Club"
-    weight = 2
-	url = "/join_the_club/"
-    
-[[menu.main]]
-    name = "Scholarships"
-    weight = 3
-    url = "/scholarships/"
-    
-[[menu.main]]
-    name = "Grants"
-    weight = 4
-    url = "/grants/"
-    
-[[menu.main]]
-    name = "News"
-    weight = 5
-    url = "/news/"
-    
-[[menu.main]]
-    name = "Contact Us"
-    weight = 6
-    url = "/contact_us/"
-    
-[[menu.main]]
-    name = "About US"
-    weight = 7
-    url = "/about/"
+[menu]
+
+[[authors]]
+description = "b"
+name = "a"
