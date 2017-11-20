@@ -1,35 +1,22 @@
-# Header Menu
+[menu]
+
 [[menu.main]]
-    name = "Home"
-    weight = 1
-    url = "/"
-    
+name = "Homeoo"
+
 [[menu.main]]
-    name = "Join the Club"
-    weight = 2
-	url = "/join_the_club/"
-    
+name = "Join the Club"
+
 [[menu.main]]
-    name = "Scholarships"
-    weight = 3
-    url = "/scholarships/"
-    
+name = "Scholarships"
+
 [[menu.main]]
-    name = "Grants"
-    weight = 4
-    url = "/grants/"
-    
+name = "Grants"
+
 [[menu.main]]
-    name = "News"
-    weight = 5
-    url = "/news/"
-    
+name = "News"
+
 [[menu.main]]
-    name = "Contact Us"
-    weight = 6
-    url = "/contact_us/"
-    
+name = "Contact Us"
+
 [[menu.main]]
-    name = "About US"
-    weight = 7
-    url = "/about/"
+name = "About US"
