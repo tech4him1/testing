@@ -1,7 +1,7 @@
-[[menu.main]]
-name = "test"
-
-[[menu.main]]
-name = "22"
-
 [[menu]]
+
+[[menu.main]]
+name = "a"
+
+[[menu.main]]
+name = "new"
