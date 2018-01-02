@@ -1,1 +1,8 @@
-{}
+{
+  "site_title": "Bob",
+  "posts": {
+    "front_limit": "2",
+    "author": "3",
+    "thumb": "/assets/uploads/bell-peppers-1386467_1920.jpg"
+  }
+}
