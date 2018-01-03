@@ -1,4 +1,4 @@
-{
-"authors":[{"name":"bob","description":"da king"}]
-}
-
+authors:
+  - description: da king
+    name: bob
+  - name: eyeo
