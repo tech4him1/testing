@@ -5,7 +5,7 @@ backend:
 display_url: https://example.com
 media_folder: "assets/uploads"
 
-publis_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
