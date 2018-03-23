@@ -1,1 +1,5 @@
-
+address: bob
+phone_numbers:
+  - number: '1'
+emails:
+  - email: a
