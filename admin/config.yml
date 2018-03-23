@@ -7,33 +7,31 @@ publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
-collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
+collections: # A list of collections the CMS should be able to edit
+  - label: "Post" # Used in routes, ie.: /admin/collections/:slug/edit
+    name: "post" # Used in the UI, ie.: "New Post"
+    folder: "content/_posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Draft", "name": "draft", widget: "boolean", default: true}
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Number", name: "number", widget: "number"}
+      - {label: "LinkedIn", name: "linkedin", widget: "string", default: "https://www.linkedin.com/groups/XXXX"}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
   - label: "Pages"
-    name: "pages"
+    name: "page"
     files:
-      - label: "Contacts"
-        name: "contacts"
-        file: "/data/contacts.yml"
+      - label: "How"
+        name: "how"
+        file: "content/_pages/how.md"
         fields:
-          - {label: Address, name: address, widget: string}
-          - label: "Phone Numbers"
-            name: phone_numbers
-            widget: list
-            fields:
-            - {label: Number, name: "number", widget: string}
-          - label: "Emails"
-            name: emails
-            widget: list
-            fields:
-            - {label: Email, name: "email", widget: string}
+          - {label: "Layout", name: "layout", widget: "hidden"}
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Menu-title", name: "menu-title", widget: "string"}
+          - {label: "Description", name: "discription", widget: "string"}
+          - {label: "menu-title", name: "discription", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
