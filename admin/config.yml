@@ -5,23 +5,35 @@ backend:
 display_url: https://example.com
 media_folder: "assets/uploads"
 
+publis_mode: editorial_workflow
+
 collections:
-  - name: "resources"
-    label: "Resources"
-    folder: "resources"
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "resource-form"}
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - label: Resource details
-        name: resource
-        widget: object
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Draft", "name": "draft", widget: "boolean", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Contacts"
+        name: "contacts"
+        file: "/data/contacts.yml"
         fields:
-          - { name: name, label: Name, widget: string }
-          - { name: type, label: Type, widget: string}
-          - { name: gated, label: "Gated", widget: boolean, default: true }
-          - { name: url, label: "Resource URL (optional)", widget: string, required: false }
-          - { name: action, label: "Call-to-Action Text", widget: string, default: "Get the Resource" }
-          - { name: description, label: "Short description for the index", widget: string }
-      - {label: "Body content", name: body, widget: markdown }
+          - {label: Address, name: address, widget: string}
+          - label: "Phone Numbers"
+            name: phone_numbers
+            widget: list
+            fields:
+            - {label: Number, name: "number", widget: string}
+          - label: "Emails"
+            name: emails
+            widget: list
+            fields:
+            - {label: Email, name: "email", widget: string}
