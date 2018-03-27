@@ -1,7 +1,7 @@
 ---
 layout: videos
 date: '2018-03-27T13:38:46-06:00'
-title: My Story
+video_title: hekl
 meta_title: Hello
 meta_description: This
 slug: is
