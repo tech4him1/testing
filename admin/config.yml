@@ -2,7 +2,7 @@ backend:
   name: github
   repo: tech4him1/testing
 
-publish_mode: editorial_workflow
+#publish_mode: editorial_workflow
 
 display_url: https://example.com
 media_folder: "assets/uploads"
