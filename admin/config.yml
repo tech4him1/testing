@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: tech4him1/testing
+  repo: tech4him1/testing.me
   branch: blog
 
 media_folder: source/images/
