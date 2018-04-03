@@ -1,7 +1,6 @@
 ---
 backend:
-  name: github
-  repo: tech4him1/testing
+  name: git-gateway
   
 display_url: https://example.com
 media_folder: "assets/uploads"
