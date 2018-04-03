@@ -1,7 +1,8 @@
 ---
 backend:
-  name: git-gateway
-
+  name: github
+  repo: tech4him1/testing
+  
 display_url: https://example.com
 media_folder: "assets/uploads"
 publish_mode: editorial_workflow
