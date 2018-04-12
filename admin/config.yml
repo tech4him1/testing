@@ -1,66 +1,30 @@
----
 backend:
   name: git-gateway
-  
-display_url: https://example.com
-media_folder: "assets/uploads"
+  branch: site
+
 publish_mode: editorial_workflow
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Posts" # Used in the UI
-    label_singular: "Post" # Used in the UI, ie: "New Post"
-    description: >
-      The description is a great place for tone setting, high level information, and editing
-      guidelines that are specific to a collection.
+media_folder: "files"
+
+collections:
+  - name: "story"
+    label: "Story"
     folder: "_posts"
+    create: true
     slug: "---"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string", tagname: "h1", pattern: [".{12,}", "Must have at least 12 characters"]}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
-      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
-      - {label: "Body", name: "body", widget: "markdown"}
-    meta:
-      - {label: "SEO Description", name: "description", widget: "text"}
-
-  - name: "faq" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "FAQ" # Used in the UI
-    folder: "_faqs"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Question", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Answer", name: "body", widget: "markdown"}
-
-  - name: "settings"
-    label: "Settings"
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: "general"
-        label: "Site Settings"
-        file: "_data/settings.json"
-        description: "General Site Settings"
-        fields:
-          - {label: "Global title", name: "site_title", widget: "string"}
-          - label: "Post Settings"
-            name: posts
-            widget: "object"
-            fields:
-              - {label: "Number of posts on frontpage", name: front_limit, widget: number}
-              - {label: "Default Author", name: author, widget: string}
-              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
-
-      - name: "authors"
-        label: "Authors"
-        file: "_data/authors.yml"
-        description: "Author descriptions"
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: "Author"
-            widget: list
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Description", name: "description", widget: "markdown"}
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: ["story"]
+      - {label: "excerpt", name: "excerpt", widget: "string", required: false}
+      - {label: "comments", name: "comments", widget: "hidden", default: true}
+      - label: "date"
+        name: "date"
+        widget: "date"
+        default: ""
+        format: "MMM Do YY"
+      - {label: "Body", name: "body", widget: "markdown", required: true}
