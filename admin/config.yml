@@ -18,5 +18,5 @@ collections:
             widget: "list"
             fields:
               - {label: "Note", name: "note", widget: "string"}
-              - {label: "Start Date", name: "start_date", widget: "date"}
-              - {label: "End Date", name: "end_date", widget: "date"}
+              - {label: "Start Date", name: "start_date", widget: "date", format: "YYYY-MM-DD"}
+              - {label: "End Date", name: "end_date", widget: "date", format: "YYYY-MM-DD"}
