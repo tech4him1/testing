@@ -1,30 +1,21 @@
 backend:
-  name: git-gateway
-  branch: site
-
-publish_mode: editorial_workflow
-
-media_folder: "files"
+  name: github
+  
+media_folder: "assets/uploads"
 
 collections:
-  - name: "story"
-    label: "Story"
-    folder: "_posts"
-    create: true
-    slug: "---"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - label: "tags"
-        name: "tags"
-        widget: "list"
-        allow_add: true
-        default: ["story"]
-      - {label: "excerpt", name: "excerpt", widget: "string", required: false}
-      - {label: "comments", name: "comments", widget: "hidden", default: true}
-      - label: "date"
-        name: "date"
-        widget: "date"
-        default: ""
-        format: "MMM Do YY"
-      - {label: "Body", name: "body", widget: "markdown", required: true}
+  - label: "Settings"
+    name: "Settings"
+    files:
+      - name: "date_settings"
+        label: "Date Settings"
+        file: "data/date_settings.json"
+        description: "Set blackout dates"
+        fields:
+          - label: "Blackout Dates"
+            name: "blackout_dates"
+            widget: "list"
+            fields:
+              - {label: "Note", name: "note", widget: "string"}
+              - {label: "Start Date", name: "start_date", widget: "date"}
+              - {label: "End Date", name: "end_date", widget: "date"}
