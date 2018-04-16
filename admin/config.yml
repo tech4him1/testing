@@ -1,5 +1,6 @@
 backend:
   name: github
+  repo: tech4him1/testing
   
 media_folder: "assets/uploads"
 
