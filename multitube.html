@@ -1,0 +1,70 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - A Pen by  C</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+
+  <div id="player1"></div>
+<div id="player2"></div>
+<script src="https://www.youtube.com/iframe_api"></script>
+  
+  
+  
+
+    <script >
+      function onYouTubeIframeAPIReady() {
+  var player1 = new YT.Player("player1", {
+    height: "390",
+    width: "640",
+    videoId: "QEqKZ7CJlk",
+    events: {
+      // onReady: onPlayerReady,
+      onStateChange: event => {
+        if (event.data === YT.PlayerState.PLAYING) {
+          player2.playVideo();
+        }
+      }
+    }
+  });
+  var player2 = new YT.Player("player2", {
+    height: "390",
+    width: "640",
+    videoId: "QEqKZ7CJlk",
+    events: {
+      // onReady: onPlayerReady,
+      onStateChange: event => {
+        
+      }
+    }
+  });
+}
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 
