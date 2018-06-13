@@ -1,29 +1,14 @@
 backend:
   name: git-gateway
-  repo: tech4him1/testing
   
 media_folder: "assets/uploads"
 
 collections:
-  - label: "Settings"
-    name: "Settings"
-    files:
-      - name: "date_settings"
-        label: "Date Settings"
-        file: "data/date_settings.json"
-        description: "Set blackout dates"
+  - name: "pages"
+    label: "Pages"
+    files: 
+      - file: "src/index.md"
+        label: "Our Team"
+        name: "our-team"
         fields:
-          - label: "Blackout Dates"
-            name: "blackout_dates"
-            widget: "list"
-            fields:
-              - {label: "Note", name: "note", widget: "string"}
-              - {label: "Start Date", name: "start_date", widget: "date", format: "YYYY-MM-DD"}
-              - {label: "End Date", name: "end_date", widget: "date", format: "YYYY-MM-DD"}
-          - label: "Blackout Object"
-            name: "blackout_obj"
-            widget: "object"
-            fields:
-              - {label: "Note", name: "note", widget: "string"}
-              - {label: "Start Date", name: "start_date", widget: "date", format: "YYYY-MM-DD"}
-              - {label: "End Date", name: "end_date", widget: "date", format: "YYYY-MM-DD"}
+          - {label: "Leadership Team", name: "leaders", widget: "list", fields: [{name: "fullName", label: "Full Name", widget: "string"},{name: "role", label: "Role", widget: "string"}, {name: "headshot", label: "Headshot", widget: "image"}, {name: "almaMater", label: "Alma Mater", widget: "string"}, {name: "major", label: "Major", widget: "string"}, {name: "petName", label: "Name of Pet", widget: "string"}, {name: "secondBestLanguage", label: "Second Best Language", widget: "string"}, {name: "story", label: "Story", widget: "markdown"}, {name: "background", label: "Background", widget: "markdown"}]}
