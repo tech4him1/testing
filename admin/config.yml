@@ -1,14 +1,13 @@
-backend:
-  name: git-gateway
-  
-media_folder: "assets/uploads"
+backend: 
+  name: test-repo
+
+media_folder: static/assets
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files: 
-      - file: "src/index.md"
-        label: "Our Team"
-        name: "our-team"
-        fields:
-          - {label: "Leadership Team", name: "leaders", widget: "list", fields: [{name: "fullName", label: "Full Name", widget: "string"},{name: "role", label: "Role", widget: "string"}, {name: "headshot", label: "Headshot", widget: "image"}, {name: "almaMater", label: "Alma Mater", widget: "string"}, {name: "major", label: "Major", widget: "string"}, {name: "petName", label: "Name of Pet", widget: "string"}, {name: "secondBestLanguage", label: "Second Best Language", widget: "string"}, {name: "story", label: "Story", widget: "markdown"}, {name: "background", label: "Background", widget: "markdown"}]}
+  - name: post
+    label: Posts
+    folder: src/posts
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Create At, widget: date }
