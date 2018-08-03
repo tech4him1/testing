@@ -1,6 +1,6 @@
 ---
 Section: issue
-Title: Running some tests on certain systems
+title: Running some tests on certain systems
 Date: '2018-08-03T11:12:50+03:00'
 Resolved: true
 ResolvedWhen: '2018-08-03T11:12:50+03:00'
