@@ -23,8 +23,8 @@ collections:
         name: "Affected"
         widget: "list"
         required: false
-        fields:
-          - {label: "System", widget: "string"}
+        field:
+          - {label: Image, name: image, widget: image}
       - label: "Severity"
         name: "Severity"
         widget: "select"
