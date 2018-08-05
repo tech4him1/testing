@@ -1,44 +1,21 @@
 backend:
-  name: github
-  repo: tech4him1/testing
+  name: git-gateway
 
 display_url: https://example.com
 media_folder: "assets/uploads"
 
-collections:
-  - name: "issue"
-    label: "Incidents"
-    label_singular: "Incident"
-    description: "Welcome to the cState admin panel! Here you can create new incidents or manage existing ones. Go ahead and give it a shot."
-    folder: "content/issues"
-    create: true
+collections: # A list of collections the CMS should be able to edit
+  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Posts" # Used in the UI
+    label_singular: "Post" # Used in the UI, ie: "New Post"
+    description: >
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
+    folder: "_posts"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Mark as incident", name: "Section", widget: "hidden", default: "issue"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Start date & time (your time)", name: "Date", widget: "datetime"}
-      - {label: "Mark as resolved", name: "Resolved", widget: "boolean", required: false}
-      - {label: "End date & time (your time)", name: "ResolvedWhen", widget: "datetime", required: false}
-      - label: "Affected systems (use exact name)"
-        name: "Affected"
-        widget: "list"
-        required: false
-        fields:
-          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-          - label: Author
-            name: author
-            widget: object
-            fields:
-              - {label: Name, name: name, widget: string, default: "Emmet"}
-              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
-      - label: "Severity"
-        name: "Severity"
-        widget: "select"
-        options:
-          - { label: "High (Down)", value: "down" }
-          - { label: "Medium (Disrupted)", value: "disrupted" }
-          - { label: "Low (Announcement)", value: "notice" }
-      - label: "Markdown body (sequence of events, description, post-mortem)"
-        name: "body"
-        widget: "markdown"
-        default: "*Investigating* - We are investigating a potential issue that might affect the uptime of one our of services. We are sorry for any inconvenience this may cause you. This incident post will be updated once we have more information."
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Body", name: "body", widget: "markdown"}
